@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo i {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 300;
+  color: #919399;
+}

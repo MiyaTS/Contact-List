@@ -1,1 +1,7 @@
-<p>internationalization works!</p>
+<p-dropdown
+  [options]="languages"
+  [(ngModel)]="lang"
+  (onChange)="ChangeLang($event.value)"
+  placeholder="Select a language"
+  class="internationalization">
+</p-dropdown>
