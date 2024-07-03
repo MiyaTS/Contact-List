@@ -1,1 +1,10 @@
-<p>contact-detail works!</p>
+<app-header></app-header>
+<div class="app-container contact-detail" *ngIf="contact">
+  <h2>{{ contact.firstName }} {{ contact.lastName }}</h2>
+  <p><strong>Phone:</strong> {{ contact.phone }}</p>
+  <p><strong>Birth Date:</strong> {{ contact.birthDate }}</p>
+  <p><strong>Email:</strong> {{ contact.email }}</p>
+  <p><strong>Address:</strong> {{ contact.address }}</p>
+  <button pButton type="button" label="Back" icon="pi pi-arrow-left" (click)="goBack()"></button>
+  <button pButton type="button" label="Edit" icon="pi pi-pencil" (click)="editContact(contact.id)"></button>
+</div>

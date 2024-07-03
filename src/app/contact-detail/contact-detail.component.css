@@ -1,0 +1,13 @@
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-detail h2 {
+  margin-bottom: 20px;
+}
+
+.contact-detail p {
+  margin: 5px 0;
+}

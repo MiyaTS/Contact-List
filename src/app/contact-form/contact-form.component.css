@@ -1,0 +1,19 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}

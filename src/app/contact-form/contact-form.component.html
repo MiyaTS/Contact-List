@@ -1,1 +1,45 @@
-<p>contact-form works!</p>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="firstName">First Name</label>
+    <input id="firstName" pInputText formControlName="firstName" />
+    <div class="error-message" *ngIf="contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched">
+      First name is required
+    </div>
+  </div>
+  <div>
+    <label for="lastName">Last Name</label>
+    <input id="lastName" pInputText formControlName="lastName" />
+    <div class="error-message" *ngIf="contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched">
+      Last name is required
+    </div>
+  </div>
+  <div>
+    <label for="phone">Phone</label>
+    <input id="phone" pInputText formControlName="phone" />
+    <div class="error-message" *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched">
+      Phone is required and must be 9 digits
+    </div>
+  </div>
+  <div>
+    <label for="birthDate">Birth Date</label>
+    <input id="birthDate" pInputText formControlName="birthDate" type="date" />
+    <div class="error-message" *ngIf="contactForm.get('birthDate')?.invalid && contactForm.get('birthDate')?.touched">
+      Birth Date is required
+    </div>
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input id="email" pInputText formControlName="email" type="email" />
+    <div class="error-message" *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+      Valid email is required
+    </div>
+  </div>
+  <div>
+    <label for="address">Address</label>
+    <input id="address" pInputText formControlName="address" />
+    <div class="error-message" *ngIf="contactForm.get('address')?.invalid && contactForm.get('address')?.touched">
+      Address is required
+    </div>
+  </div>
+  <button pButton type="submit" label="Save" [disabled]="contactForm.invalid"></button>
+</form>
