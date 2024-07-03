@@ -1,12 +1,12 @@
 <app-header></app-header>
 <div class="app-container contact-detail" *ngIf="contact">
   <h2>{{ contact.firstName }} {{ contact.lastName }}</h2>
-  <p><strong>Phone:</strong> {{ contact.phone }}</p>
-  <p><strong>Birth Date:</strong> {{ contact.birthDate }}</p>
-  <p><strong>Email:</strong> {{ contact.email }}</p>
-  <p><strong>Address:</strong> {{ contact.address }}</p>
+  <p><strong>{{ 'CONTACT.PHONE' | translate }}:</strong> {{ contact.phone }}</p>
+  <p><strong>{{ 'CONTACT.BIRTH_DATE' | translate }}:</strong> {{ contact.birthDate }}</p>
+  <p><strong>{{ 'CONTACT.EMAIL' | translate }}:</strong> {{ contact.email }}</p>
+  <p><strong>{{ 'CONTACT.ADDRESS' | translate }}:</strong> {{ contact.address }}</p>
   <div class="contact-detail-btns">
-    <button pButton type="button" label="Back" icon="pi pi-arrow-left" (click)="goBack()"></button>
-    <button pButton type="button" label="Edit" icon="pi pi-pencil" (click)="editContact(contact.id)"></button>
+    <button pButton type="button" label="{{ 'CONTACT.BACK' | translate }}" icon="pi pi-arrow-left" (click)="goBack()"></button>
+    <button pButton type="button" label="{{ 'CONTACT.EDIT' | translate }}" icon="pi pi-pencil" (click)="editContact(contact.id)"></button>
   </div>
 </div>

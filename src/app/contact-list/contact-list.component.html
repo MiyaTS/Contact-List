@@ -1,17 +1,17 @@
 <app-header></app-header>
 <div class="app-container">
   <div class="search-container">
-    <input type="text" pInputText [(ngModel)]="searchTerm" placeholder="Search contacts" />
-    <button pButton type="button" label="Search" (click)="searchContacts()"></button>
+    <input type="text" pInputText [(ngModel)]="searchTerm" placeholder="{{ 'CONTACT.ENTER' | translate }}" />
+    <button pButton type="button" label="{{ 'CONTACT.SEARCH' | translate }}" (click)="searchContacts()"></button>
   </div>
 
   <p-table [value]="contacts" [scrollable]="true" scrollHeight="350px">
     <ng-template pTemplate="header">
       <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Phone</th>
-        <th>Actions</th>
+        <th>{{ 'CONTACT.FIRST_NAME' | translate }}</th>
+        <th>{{ 'CONTACT.LAST_NAME' | translate }}</th>
+        <th>{{ 'CONTACT.PHONE' | translate }}</th>
+        <th>{{ 'CONTACT.ACTIONS' | translate }}</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-contact let-rowIndex="rowIndex">
@@ -28,5 +28,5 @@
     </ng-template>
   </p-table>
 
-  <button class="add" pButton type="button" label="Add Contact" (click)="showAddContactDialog()"></button>
+  <button class="add" pButton type="button" label="{{ 'CONTACT.ADD_CONTACT' | translate }}" (click)="showAddContactDialog()"></button>
 </div>

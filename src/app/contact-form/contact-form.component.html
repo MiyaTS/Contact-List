@@ -2,72 +2,72 @@
   <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
     <div class="form-row">
       <div class="form-label">
-        <label for="firstName">First Name:</label>
+        <label for="firstName">{{ 'CONTACT.FIRST_NAME' | translate }}:</label>
       </div>
       <div class="form-input">
         <input id="firstName" type="text" pInputText formControlName="firstName" />
         <div *ngIf="contactForm.controls['firstName'].invalid && (contactForm.controls['firstName'].dirty || contactForm.controls['firstName'].touched)" class="error">
-          First Name is required.
+          {{ 'VALIDATION.FIRST_NAME_REQUIRED' | translate }}
         </div>
       </div>
     </div>
     <div class="form-row">
       <div class="form-label">
-        <label for="lastName">Last Name:</label>
+        <label for="lastName">{{ 'CONTACT.LAST_NAME' | translate }}:</label>
       </div>
       <div class="form-input">
         <input id="lastName" type="text" pInputText formControlName="lastName" />
         <div *ngIf="contactForm.controls['lastName'].invalid && (contactForm.controls['lastName'].dirty || contactForm.controls['lastName'].touched)" class="error">
-          Last Name is required.
+          {{ 'VALIDATION.LAST_NAME_REQUIRED' | translate }}
         </div>
       </div>
     </div>
     <div class="form-row">
       <div class="form-label">
-        <label for="phone">Phone:</label>
+        <label for="phone">{{ 'CONTACT.PHONE' | translate }}:</label>
       </div>
       <div class="form-input">
         <input id="phone" type="text" pInputText formControlName="phone" />
         <div *ngIf="contactForm.controls['phone'].invalid && (contactForm.controls['phone'].dirty || contactForm.controls['phone'].touched)" class="error">
-          Phone is required and must be 9 digits.
+          {{ 'VALIDATION.PHONE_REQUIRED' | translate }}
         </div>
       </div>
     </div>
     <div class="form-row">
       <div class="form-label">
-        <label for="birthDate">Birth Date:</label>
+        <label for="birthDate">{{ 'CONTACT.BIRTH_DATE' | translate }}:</label>
       </div>
       <div class="form-input">
         <input id="birthDate" type="date" pInputText formControlName="birthDate" />
         <div *ngIf="contactForm.controls['birthDate'].invalid && (contactForm.controls['birthDate'].dirty || contactForm.controls['birthDate'].touched)" class="error">
-          Birth Date is required.
+          {{ 'VALIDATION.BIRTH_DATE_REQUIRED' | translate }}
         </div>
       </div>
     </div>
     <div class="form-row">
       <div class="form-label">
-        <label for="email">Email:</label>
+        <label for="email">{{ 'CONTACT.EMAIL' | translate }}:</label>
       </div>
       <div class="form-input">
         <input id="email" type="email" pInputText formControlName="email" />
         <div *ngIf="contactForm.controls['email'].invalid && (contactForm.controls['email'].dirty || contactForm.controls['email'].touched)" class="error">
-          Valid Email is required.
+          {{ 'VALIDATION.EMAIL_REQUIRED' | translate }}
         </div>
       </div>
     </div>
     <div class="form-row">
       <div class="form-label">
-        <label for="address">Address:</label>
+        <label for="address">{{ 'CONTACT.ADDRESS' | translate }}:</label>
       </div>
       <div class="form-input">
         <input id="address" type="text" pInputText formControlName="address" />
         <div *ngIf="contactForm.controls['address'].invalid && (contactForm.controls['address'].dirty || contactForm.controls['address'].touched)" class="error">
-          Address is required.
+          {{ 'VALIDATION.ADDRESS_REQUIRED' | translate }}
         </div>
       </div>
     </div>
     <div class="form-row">
-      <button pButton type="submit" label="Save" [disabled]="contactForm.invalid"></button>
+      <button pButton type="submit" label=" {{ 'CONTACT.SAVE' | translate }}" [disabled]="contactForm.invalid"></button>
     </div>
   </form>
 </div>

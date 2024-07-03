@@ -4,6 +4,7 @@ import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { ContactFormComponent } from '../contact-form/contact-form.component';
 import {Contact, ContactService} from "../services/contact.service";
 import { InputTextModule } from 'primeng/inputtext';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-contact-list',
@@ -16,7 +17,7 @@ export class ContactListComponent implements OnInit {
   searchTerm: string = '';
   ref: DynamicDialogRef | undefined;
 
-  constructor(private contactService: ContactService, private router: Router, public dialogService: DialogService) {}
+  constructor(private contactService: ContactService, private router: Router, public dialogService: DialogService,   private translateService: TranslateService) {}
 
   ngOnInit(): void {
     this.contacts = this.contactService.getContacts();
@@ -41,31 +42,27 @@ export class ContactListComponent implements OnInit {
   }
 
   showAddContactDialog(): void {
-    this.ref = this.dialogService.open(ContactFormComponent, {
-      header: 'Add Contact',
-      width: '80%',
-      contentStyle: {"max-height": "1000px", "overflow": "auto"},
-      baseZIndex: 10000
-    });
-
-    this.ref.onClose.subscribe(() => {
-      this.contacts = this.contactService.getContacts();
+    this.translateService.get('CONTACT.ADD_CONTACT').subscribe((translatedText: string) => {
+      this.ref = this.dialogService.open(ContactFormComponent, {
+        header: translatedText,
+        width: '80%',
+        contentStyle: {"max-height": "1000px", "overflow": "auto"},
+        baseZIndex: 10000
+      });
     });
   }
 
   showEditContactDialog(contactId: number): void {
-    this.ref = this.dialogService.open(ContactFormComponent, {
-      header: 'Edit Contact',
-      width: '80%',
-      contentStyle: {"max-height": "1000px", "overflow": "auto"},
-      baseZIndex: 10000,
-      data: {
-        contactId: contactId
-      }
-    });
-
-    this.ref.onClose.subscribe(() => {
-      this.contacts = this.contactService.getContacts();
+    this.translateService.get('CONTACT.EDIT_CONTACT').subscribe((translatedText: string) => {
+      this.ref = this.dialogService.open(ContactFormComponent, {
+        header: translatedText,
+        width: '80%',
+        contentStyle: {"max-height": "1000px", "overflow": "auto"},
+        baseZIndex: 10000,
+        data: {
+          contactId: contactId
+        }
+      });
     });
   }
 }

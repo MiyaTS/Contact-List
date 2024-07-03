@@ -1,0 +1,30 @@
+{
+  "APP": {
+    "TITLE": "Contact Management System"
+  },
+  "CONTACT": {
+    "FIRST_NAME": "First Name",
+    "LAST_NAME": "Last Name",
+    "PHONE": "Phone",
+    "BIRTH_DATE": "Birth Date",
+    "EMAIL": "Email",
+    "ADDRESS": "Address",
+    "ACTIONS": "Actions",
+    "ADD_CONTACT": "Add Contact",
+    "EDIT_CONTACT": "Edit Contact",
+    "DELETE_CONTACT": "Delete Contact",
+    "SAVE": "Save",
+    "ENTER": "Enter contact",
+    "SEARCH": "Search",
+    "BACK": "Back",
+    "EDIT": "Edit"
+  },
+  "VALIDATION": {
+    "FIRST_NAME_REQUIRED": "First Name is required.",
+    "LAST_NAME_REQUIRED": "Last Name is required.",
+    "PHONE_REQUIRED": "Phone is required and must be 10 digits.",
+    "BIRTH_DATE_REQUIRED": "Birth Date is required.",
+    "EMAIL_REQUIRED": "Valid Email is required.",
+    "ADDRESS_REQUIRED": "Address is required."
+  }
+}

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { ContactFormComponent } from '../contact-form/contact-form.component';
 import {Contact, ContactService} from "../services/contact.service";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-contact-detail',
@@ -18,7 +19,8 @@ export class ContactDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private contactService: ContactService,
-    public dialogService: DialogService
+    public dialogService: DialogService,
+    private translateService: TranslateService
   ) {}
 
   ngOnInit(): void {
@@ -31,18 +33,16 @@ export class ContactDetailComponent implements OnInit {
   }
 
   editContact(contactId: number): void {
-    this.ref = this.dialogService.open(ContactFormComponent, {
-      header: 'Edit Contact',
-      width: '80%',
-      contentStyle: {"max-height": "1000px", "overflow": "auto"},
-      baseZIndex: 10000,
-      data: {
-        contactId: contactId
-      }
-    });
-
-    this.ref.onClose.subscribe(() => {
-      this.contact = this.contactService.getContact(contactId);
+    this.translateService.get('CONTACT.EDIT_CONTACT').subscribe((translatedText: string) => {
+      this.ref = this.dialogService.open(ContactFormComponent, {
+        header: translatedText,
+        width: '80%',
+        contentStyle: {"max-height": "1000px", "overflow": "auto"},
+        baseZIndex: 10000,
+        data: {
+          contactId: contactId
+        }
+      });
     });
   }
 }
