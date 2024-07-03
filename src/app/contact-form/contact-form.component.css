@@ -1,19 +1,34 @@
+
 form {
+  width: 80%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
 
-form div {
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
 }
 
-input.ng-invalid.ng-touched {
-  border-color: red;
+.form-label {
+  flex: 1;
+  margin-right: 10px;
 }
 
-.error-message {
+.form-input {
+  flex: 2;
+}
+
+.error {
   color: red;
-  font-size: 12px;
+  font-size: 0.8em;
   margin-top: 5px;
+}
+
+button {
+  align-self: flex-end;
+  margin-top: 20px;
 }

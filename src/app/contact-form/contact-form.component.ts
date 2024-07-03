@@ -24,7 +24,7 @@ export class ContactFormComponent implements OnInit {
     this.contactForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      phone: ['', [Validators.required, Validators.pattern(/^\d{9}$/)]],
+      phone: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
       birthDate: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       address: ['', Validators.required]

@@ -5,7 +5,7 @@
     <button pButton type="button" label="Search" (click)="searchContacts()"></button>
   </div>
 
-  <p-table [value]="contacts">
+  <p-table [value]="contacts" [scrollable]="true" scrollHeight="350px">
     <ng-template pTemplate="header">
       <tr>
         <th>First Name</th>
@@ -14,19 +14,19 @@
         <th>Actions</th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-contact>
+    <ng-template pTemplate="body" let-contact let-rowIndex="rowIndex">
       <tr>
         <td>{{contact.firstName}}</td>
         <td>{{contact.lastName}}</td>
         <td>{{contact.phone}}</td>
         <td>
-          <button pButton type="button" icon="pi pi-eye" (click)="viewContact(contact.id)"></button>
-          <button pButton type="button" icon="pi pi-pencil" (click)="showEditContactDialog(contact.id)"></button>
+          <button class="icon-btn" pButton type="button" icon="pi pi-eye" (click)="viewContact(contact.id)"></button>
+          <button class="icon-btn" pButton type="button" icon="pi pi-pencil" (click)="showEditContactDialog(contact.id)"></button>
           <button pButton type="button" icon="pi pi-trash" (click)="deleteContact(contact.id)"></button>
         </td>
       </tr>
     </ng-template>
   </p-table>
 
-  <button pButton type="button" label="Add Contact" (click)="showAddContactDialog()"></button>
+  <button class="add" pButton type="button" label="Add Contact" (click)="showAddContactDialog()"></button>
 </div>

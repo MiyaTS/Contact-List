@@ -33,8 +33,8 @@ export class ContactDetailComponent implements OnInit {
   editContact(contactId: number): void {
     this.ref = this.dialogService.open(ContactFormComponent, {
       header: 'Edit Contact',
-      width: '50%',
-      contentStyle: {"max-height": "500px", "overflow": "auto"},
+      width: '80%',
+      contentStyle: {"max-height": "1000px", "overflow": "auto"},
       baseZIndex: 10000,
       data: {
         contactId: contactId

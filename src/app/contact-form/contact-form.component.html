@@ -1,45 +1,73 @@
-<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="firstName">First Name</label>
-    <input id="firstName" pInputText formControlName="firstName" />
-    <div class="error-message" *ngIf="contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched">
-      First name is required
+<div class="app-container">
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="form-label">
+        <label for="firstName">First Name:</label>
+      </div>
+      <div class="form-input">
+        <input id="firstName" type="text" pInputText formControlName="firstName" />
+        <div *ngIf="contactForm.controls['firstName'].invalid && (contactForm.controls['firstName'].dirty || contactForm.controls['firstName'].touched)" class="error">
+          First Name is required.
+        </div>
+      </div>
     </div>
-  </div>
-  <div>
-    <label for="lastName">Last Name</label>
-    <input id="lastName" pInputText formControlName="lastName" />
-    <div class="error-message" *ngIf="contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched">
-      Last name is required
+    <div class="form-row">
+      <div class="form-label">
+        <label for="lastName">Last Name:</label>
+      </div>
+      <div class="form-input">
+        <input id="lastName" type="text" pInputText formControlName="lastName" />
+        <div *ngIf="contactForm.controls['lastName'].invalid && (contactForm.controls['lastName'].dirty || contactForm.controls['lastName'].touched)" class="error">
+          Last Name is required.
+        </div>
+      </div>
     </div>
-  </div>
-  <div>
-    <label for="phone">Phone</label>
-    <input id="phone" pInputText formControlName="phone" />
-    <div class="error-message" *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched">
-      Phone is required and must be 9 digits
+    <div class="form-row">
+      <div class="form-label">
+        <label for="phone">Phone:</label>
+      </div>
+      <div class="form-input">
+        <input id="phone" type="text" pInputText formControlName="phone" />
+        <div *ngIf="contactForm.controls['phone'].invalid && (contactForm.controls['phone'].dirty || contactForm.controls['phone'].touched)" class="error">
+          Phone is required and must be 9 digits.
+        </div>
+      </div>
     </div>
-  </div>
-  <div>
-    <label for="birthDate">Birth Date</label>
-    <input id="birthDate" pInputText formControlName="birthDate" type="date" />
-    <div class="error-message" *ngIf="contactForm.get('birthDate')?.invalid && contactForm.get('birthDate')?.touched">
-      Birth Date is required
+    <div class="form-row">
+      <div class="form-label">
+        <label for="birthDate">Birth Date:</label>
+      </div>
+      <div class="form-input">
+        <input id="birthDate" type="date" pInputText formControlName="birthDate" />
+        <div *ngIf="contactForm.controls['birthDate'].invalid && (contactForm.controls['birthDate'].dirty || contactForm.controls['birthDate'].touched)" class="error">
+          Birth Date is required.
+        </div>
+      </div>
     </div>
-  </div>
-  <div>
-    <label for="email">Email</label>
-    <input id="email" pInputText formControlName="email" type="email" />
-    <div class="error-message" *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
-      Valid email is required
+    <div class="form-row">
+      <div class="form-label">
+        <label for="email">Email:</label>
+      </div>
+      <div class="form-input">
+        <input id="email" type="email" pInputText formControlName="email" />
+        <div *ngIf="contactForm.controls['email'].invalid && (contactForm.controls['email'].dirty || contactForm.controls['email'].touched)" class="error">
+          Valid Email is required.
+        </div>
+      </div>
     </div>
-  </div>
-  <div>
-    <label for="address">Address</label>
-    <input id="address" pInputText formControlName="address" />
-    <div class="error-message" *ngIf="contactForm.get('address')?.invalid && contactForm.get('address')?.touched">
-      Address is required
+    <div class="form-row">
+      <div class="form-label">
+        <label for="address">Address:</label>
+      </div>
+      <div class="form-input">
+        <input id="address" type="text" pInputText formControlName="address" />
+        <div *ngIf="contactForm.controls['address'].invalid && (contactForm.controls['address'].dirty || contactForm.controls['address'].touched)" class="error">
+          Address is required.
+        </div>
+      </div>
     </div>
-  </div>
-  <button pButton type="submit" label="Save" [disabled]="contactForm.invalid"></button>
-</form>
+    <div class="form-row">
+      <button pButton type="submit" label="Save" [disabled]="contactForm.invalid"></button>
+    </div>
+  </form>
+</div>
