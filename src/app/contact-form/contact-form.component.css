@@ -1,28 +1,25 @@
-
-form {
-  width: 80%;
-  max-width: 600px;
+.form {
   display: flex;
   flex-direction: column;
 }
 
-.form-row {
+.form__row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.form-label {
+.form__label {
   flex: 1;
   margin-right: 10px;
 }
 
-.form-input {
+.form__input {
   flex: 2;
 }
 
-.error {
+.form__error {
   color: red;
   font-size: 0.8em;
   margin-top: 5px;

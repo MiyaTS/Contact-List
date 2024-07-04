@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import {Contact, ContactService} from "../services/contact.service";
@@ -16,8 +15,6 @@ export class ContactFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private contactService: ContactService,
-    private route: ActivatedRoute,
-    private router: Router,
     public ref: DynamicDialogRef,
     public config: DynamicDialogConfig
   ) {

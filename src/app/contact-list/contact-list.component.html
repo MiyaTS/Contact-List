@@ -1,11 +1,11 @@
 <app-header></app-header>
 <div class="app-container">
-  <div class="search-container">
-    <input type="text" pInputText [(ngModel)]="searchTerm" placeholder="{{ 'CONTACT.ENTER' | translate }}" />
-    <button pButton type="button" label="{{ 'CONTACT.SEARCH' | translate }}" (click)="searchContacts()"></button>
+  <div class="search">
+    <input class="search__input" type="text" pInputText [(ngModel)]="searchTerm" placeholder="{{ 'CONTACT.ENTER' | translate }}" />
+    <button class="search__button" pButton type="button" label="{{ 'CONTACT.SEARCH' | translate }}" (click)="searchContacts()"></button>
   </div>
 
-  <p-table [value]="contacts" [scrollable]="true" scrollHeight="350px">
+  <p-table class="contacts-table" [value]="contacts" [scrollable]="true" scrollHeight="350px">
     <ng-template pTemplate="header">
       <tr>
         <th>{{ 'CONTACT.FIRST_NAME' | translate }}</th>
@@ -15,18 +15,18 @@
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-contact let-rowIndex="rowIndex">
-      <tr>
-        <td>{{contact.firstName}}</td>
-        <td>{{contact.lastName}}</td>
-        <td>{{contact.phone}}</td>
-        <td>
-          <button class="icon-btn" pButton type="button" icon="pi pi-eye" (click)="viewContact(contact.id)"></button>
-          <button class="icon-btn" pButton type="button" icon="pi pi-pencil" (click)="showEditContactDialog(contact.id)"></button>
-          <button pButton type="button" icon="pi pi-trash" (click)="deleteContact(contact.id)"></button>
+      <tr class="contacts-table__row">
+        <td class="contacts-table__cell">{{ contact.firstName }}</td>
+        <td class="contacts-table__cell">{{ contact.lastName }}</td>
+        <td class="contacts-table__cell">{{ contact.phone }}</td>
+        <td class="contacts-table__cell contacts-table__cell--actions">
+          <button class="contacts-table__button" pButton type="button" icon="pi pi-eye" (click)="viewContact(contact.id)"></button>
+          <button class="contacts-table__button" pButton type="button" icon="pi pi-pencil" (click)="showEditContactDialog(contact.id)"></button>
+          <button class="contacts-table__button" pButton type="button" icon="pi pi-trash" (click)="deleteContact(contact.id)"></button>
         </td>
       </tr>
     </ng-template>
   </p-table>
 
-  <button class="add" pButton type="button" label="{{ 'CONTACT.ADD_CONTACT' | translate }}" (click)="showAddContactDialog()"></button>
+  <button class="add-contact" pButton type="button" label="{{ 'CONTACT.ADD_CONTACT' | translate }}" (click)="showAddContactDialog()"></button>
 </div>

@@ -1,18 +1,18 @@
-.search-container {
+.search {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.p-table {
+.contacts-table {
   margin-bottom: 20px;
 }
 
-.add{
-  margin-top: 16px;
+.contacts-table__button {
+  margin-right: 8px;
 }
 
-.icon-btn{
-  margin-right: 8px;
+.add-contact {
+  margin-top: 16px;
 }

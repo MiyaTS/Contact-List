@@ -4,15 +4,15 @@
   align-items: center;
 }
 
-.contact-detail h2 {
+.contact-detail__title {
   margin-bottom: 20px;
 }
 
-.contact-detail p {
+.contact-detail__info {
   margin: 5px 0;
 }
 
-.contact-detail-btns{
+.contact-detail__buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;

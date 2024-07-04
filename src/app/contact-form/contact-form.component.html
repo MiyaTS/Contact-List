@@ -1,73 +1,73 @@
 <div class="app-container">
-  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-    <div class="form-row">
-      <div class="form-label">
+  <form class="form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="form__row">
+      <div class="form__label">
         <label for="firstName">{{ 'CONTACT.FIRST_NAME' | translate }}:</label>
       </div>
-      <div class="form-input">
+      <div class="form__input">
         <input id="firstName" type="text" pInputText formControlName="firstName" />
-        <div *ngIf="contactForm.controls['firstName'].invalid && (contactForm.controls['firstName'].dirty || contactForm.controls['firstName'].touched)" class="error">
+        <div *ngIf="contactForm.controls['firstName'].invalid && (contactForm.controls['firstName'].dirty || contactForm.controls['firstName'].touched)" class="form__error">
           {{ 'VALIDATION.FIRST_NAME_REQUIRED' | translate }}
         </div>
       </div>
     </div>
-    <div class="form-row">
-      <div class="form-label">
+    <div class="form__row">
+      <div class="form__label">
         <label for="lastName">{{ 'CONTACT.LAST_NAME' | translate }}:</label>
       </div>
-      <div class="form-input">
+      <div class="form__input">
         <input id="lastName" type="text" pInputText formControlName="lastName" />
-        <div *ngIf="contactForm.controls['lastName'].invalid && (contactForm.controls['lastName'].dirty || contactForm.controls['lastName'].touched)" class="error">
+        <div *ngIf="contactForm.controls['lastName'].invalid && (contactForm.controls['lastName'].dirty || contactForm.controls['lastName'].touched)" class="form__error">
           {{ 'VALIDATION.LAST_NAME_REQUIRED' | translate }}
         </div>
       </div>
     </div>
-    <div class="form-row">
-      <div class="form-label">
+    <div class="form__row">
+      <div class="form__label">
         <label for="phone">{{ 'CONTACT.PHONE' | translate }}:</label>
       </div>
-      <div class="form-input">
+      <div class="form__input">
         <input id="phone" type="text" pInputText formControlName="phone" />
-        <div *ngIf="contactForm.controls['phone'].invalid && (contactForm.controls['phone'].dirty || contactForm.controls['phone'].touched)" class="error">
+        <div *ngIf="contactForm.controls['phone'].invalid && (contactForm.controls['phone'].dirty || contactForm.controls['phone'].touched)" class="form__error">
           {{ 'VALIDATION.PHONE_REQUIRED' | translate }}
         </div>
       </div>
     </div>
-    <div class="form-row">
-      <div class="form-label">
+    <div class="form__row">
+      <div class="form__label">
         <label for="birthDate">{{ 'CONTACT.BIRTH_DATE' | translate }}:</label>
       </div>
-      <div class="form-input">
+      <div class="form__input">
         <input id="birthDate" type="date" pInputText formControlName="birthDate" />
-        <div *ngIf="contactForm.controls['birthDate'].invalid && (contactForm.controls['birthDate'].dirty || contactForm.controls['birthDate'].touched)" class="error">
+        <div *ngIf="contactForm.controls['birthDate'].invalid && (contactForm.controls['birthDate'].dirty || contactForm.controls['birthDate'].touched)" class="form__error">
           {{ 'VALIDATION.BIRTH_DATE_REQUIRED' | translate }}
         </div>
       </div>
     </div>
-    <div class="form-row">
-      <div class="form-label">
+    <div class="form__row">
+      <div class="form__label">
         <label for="email">{{ 'CONTACT.EMAIL' | translate }}:</label>
       </div>
-      <div class="form-input">
+      <div class="form__input">
         <input id="email" type="email" pInputText formControlName="email" />
-        <div *ngIf="contactForm.controls['email'].invalid && (contactForm.controls['email'].dirty || contactForm.controls['email'].touched)" class="error">
+        <div *ngIf="contactForm.controls['email'].invalid && (contactForm.controls['email'].dirty || contactForm.controls['email'].touched)" class="form__error">
           {{ 'VALIDATION.EMAIL_REQUIRED' | translate }}
         </div>
       </div>
     </div>
-    <div class="form-row">
-      <div class="form-label">
+    <div class="form__row">
+      <div class="form__label">
         <label for="address">{{ 'CONTACT.ADDRESS' | translate }}:</label>
       </div>
-      <div class="form-input">
+      <div class="form__input">
         <input id="address" type="text" pInputText formControlName="address" />
-        <div *ngIf="contactForm.controls['address'].invalid && (contactForm.controls['address'].dirty || contactForm.controls['address'].touched)" class="error">
+        <div *ngIf="contactForm.controls['address'].invalid && (contactForm.controls['address'].dirty || contactForm.controls['address'].touched)" class="form__error">
           {{ 'VALIDATION.ADDRESS_REQUIRED' | translate }}
         </div>
       </div>
     </div>
-    <div class="form-row">
-      <button pButton type="submit" label=" {{ 'CONTACT.SAVE' | translate }}" [disabled]="contactForm.invalid"></button>
+    <div class="form__row">
+      <button pButton type="submit" label="{{ 'CONTACT.SAVE' | translate }}" [disabled]="contactForm.invalid"></button>
     </div>
   </form>
 </div>
